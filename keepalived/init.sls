@@ -13,9 +13,9 @@ copy_config:
  file.managed:
   - name: /etc/keepalived/keepalived.conf
 {% if "dc1" in grains['id'] %}
-  - source: salt://keepalived/ch3_keepalived.conf
+  - source: salt://keepalived/dc1.conf
 {% elif "dc2" in grains['id'] %}
-  - source: salt://keepalived/sc9_keepalived.conf
+  - source: salt://keepalived/dc2.conf
 {% endif %}
   - replace: True
   - template: jinja
