@@ -1,0 +1,2 @@
+# saltstack
+Saltstack configuration files
