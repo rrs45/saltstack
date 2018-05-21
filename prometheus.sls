@@ -6,12 +6,12 @@ install_nfs_utils:
  file.append: 
     - text: |
        #Mount NetApp NFS SSD storage for Tesseract Prometheus
-       <<ip>>:/tesseract_prom1_12742	/mnt/prometheus		nfs  noatime,nfsvers=3,actimeo=1800,rsize=8192,wsize=8192,intr,tcp
+       <<mountpoint1>>	/mnt/prometheus		nfs  noatime,nfsvers=3,actimeo=1800,rsize=8192,wsize=8192,intr,tcp
 
 /mnt/prometheus:
   mount.mounted:
     - name: /mnt/prometheus
-    - device: <<ip>>:/tesseract_prom1_12742
+    - device: <<mountpoint1>>
     - fstype: nfs
     - opts: "noatime,vers=3,actimeo=1800,rsize=65535,wsize=65535,intr,tcp"
     - persist: 'True'
